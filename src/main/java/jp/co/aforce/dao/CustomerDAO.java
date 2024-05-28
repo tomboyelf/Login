@@ -1,12 +1,10 @@
-package dao;
+package jp.co.aforce.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import bean.Customer;
-import bean.Product;
-//import bean.Product;
+import jp.co.aforce.beans.Customer;
 
 public class CustomerDAO extends DAO {
 
@@ -18,8 +16,9 @@ public class CustomerDAO extends DAO {
 		Connection con=getConnection();
 		
 		PreparedStatement st;
+//		?はプレースホルダ
 		st=con.prepareStatement(
-				"select * from customer where login=? and password=?");
+				"select * from login where login=? and password=?");
 		st.setString(1, login);
 		st.setString(2, password);
 		ResultSet rs=st.executeQuery();
@@ -37,13 +36,19 @@ public class CustomerDAO extends DAO {
 		return customer;
 	}
 	
-	public int insert(Product product) throws Exception{
-		Connection con=getConnection();
+	public int insert(String login, String password) throws Exception{
+		if(password.length()<4) {
+			int line=0;
+			return line;
+		}
 		
-		PreparedStatement st=con.prepareStatement(
-				"insert into product values(null, ?, ?)");
-		st.setString(1, product.getName());
-		st.setInt(2, product.getPrice());
+		Connection con=getConnection();
+		PreparedStatement st;
+		
+		st=con.prepareStatement(
+				"insert into login values(null, ?, ?)");
+		st.setString(1, login);
+		st.setString(2, password);
 		int line=st.executeUpdate();
 		
 		st.close();

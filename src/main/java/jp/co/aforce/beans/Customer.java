@@ -1,10 +1,18 @@
-package bean;
+package jp.co.aforce.beans;
 
 public class Customer implements java.io.Serializable {
 
 		private int id;
 		private String login;
 		private String password;
+		
+		public Customer(int id, String login, String password) {
+			this.id=id;
+			this.login=login;
+			this.password=password;
+		}
+		
+		public Customer() {};
 		
 		public int getId() {
 			return id;

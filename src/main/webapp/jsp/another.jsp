@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@include file="/header.html" %>
 
-<p>ログイン成功画面</p>
-<p>ようこそ、${customer.login }さん！</p>
-<p><a href="/Login/jsp/another.jsp">別のページへ</a></p>
+<p>別のページ</p>
+<p>ユーザー名「${customer.login }」はそのまま</p>
+<p><a href="/Login/jsp/login-out.jsp">ログイン成功画面へ</a></p>
 <p><a href="/Login/logout">ログアウト</a></p>
 
 <%@include file="/footer.html" %>

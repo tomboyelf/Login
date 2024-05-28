@@ -1,4 +1,4 @@
-package dao;
+package jp.co.aforce.dao;
 
 import java.sql.Connection;
 
@@ -18,7 +18,7 @@ public class DAO {
 	public Connection getConnection() throws Exception{
 		if(ds==null) {
 			InitialContext ic=new InitialContext();
-			ds=(DataSource)ic.lookup("java:/comp/env/jdbc/book");
+			ds=(DataSource)ic.lookup("java:/comp/env/jdbc/login_db");
 		}
 		
 		return ds.getConnection();
