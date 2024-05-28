@@ -3,7 +3,7 @@
 <%@include file="/header.html" %>
 
 <p>${msg }</p>
-<form action="/Login/login" method="post">
+<form action="Login.action" method="post">
 	ユーザー名<input type="text" name="login" value="${login }" requierd><br>
 	パスワード<input type="password" name="pass" requierd><br>
 	<input type="submit" value="ログイン">
