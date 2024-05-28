@@ -5,6 +5,6 @@
 <p>別のページ</p>
 <p>ユーザー名「${customer.login }」はそのまま</p>
 <p><a href="/Login/jsp/login-out.jsp">ログイン成功画面へ</a></p>
-<p><a href="/Login/logout">ログアウト</a></p>
+<p><a href="Logout.action">ログアウト</a></p>
 
 <%@include file="/footer.html" %>

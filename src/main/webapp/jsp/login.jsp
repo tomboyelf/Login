@@ -9,4 +9,5 @@
 	<input type="submit" value="ログイン">
 </form>
 <p><a href="/Login/jsp/signup.jsp">会員登録が済んでいない人はこちら</a></p>
+<p><a href="Admin.action">管理者画面</a></p>
 <%@include file="/footer.html" %>
