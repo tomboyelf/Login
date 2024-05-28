@@ -53,7 +53,7 @@ public class LoginAction extends Action{
 //		try {
 			Customer customer=dao.search(login, pass);
 			if(customer==null) {
-				String msg="IDもしくはパスワードが違います";
+				String msg="IDもしくはパスワードが違います。";
 				session.setAttribute("msg", msg);
 				session.setAttribute("login", login);
 				return "login.jsp";
