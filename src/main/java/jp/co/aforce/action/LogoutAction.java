@@ -12,6 +12,8 @@ public class LogoutAction extends Action{
 		HttpSession session=request.getSession();
 
 		session.removeAttribute("customer");
+		session.removeAttribute("loginIf");
+		session.removeAttribute("loginMsg");
 		return "index.jsp";
 	}
 	

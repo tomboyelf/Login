@@ -4,13 +4,16 @@
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 
 <c:forEach var="list" items="${allList}">
-    ${list.id}:${list.login}:${list.password}<br>
+    <p>プライマリ:${list.id}/ユーザーID:${list.login}/パスワード:${list.password}<br>
     <form action="Deleteacc.action" method="post">
 		<input type="hidden" name="delete_button" value="${list.id}">
 		<input type="submit" value="削除">
 	</form>
 </c:forEach>
-<p>${msg }</p>
+<p>${deleteMsg }</p>
+<%
+session.removeAttribute("deleteMsg");
+%>
 <p><a href="Admin.action">管理者画面</a></p>
 <p><a href="/Login/jsp/index.jsp">ホームへ戻る</a></p>
 

@@ -21,15 +21,20 @@ public class LoginAction extends Action{
 		String pass=request.getParameter("pass");
 		
 		CustomerDAO dao=new CustomerDAO();
-			Customer customer=dao.search(login, pass);
+		Customer customer=dao.search(login, pass);
+//		session.setAttribute("customer", customer);
 			if(customer==null) {
 				String msg="IDもしくはパスワードが違います。";
-				session.setAttribute("msg", msg);
-				session.setAttribute("login", login);
+				request.setAttribute("loginMsg", msg);
+				request.setAttribute("login", login);
 				return "index.jsp";
 			}
-			session.setAttribute("customer", customer);
-			return "login-out.jsp";
+			String msg="ようこそ、"+login+"さん";
+			String loginIf="aioue";
+			session.setAttribute("loginIf", loginIf);
+			session.setAttribute("loginMsg", msg);
+//			request.getRequestDispatcher("index.jsp").forward(request, response)
+			return "index.jsp";
 	}
 	
 }

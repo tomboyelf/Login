@@ -26,12 +26,12 @@ public class SignupAction extends Action {
 				return "signup-ok.jsp";
 			} 
 			String msg="登録に失敗しました。パスワードは4文字以上で入力してください。";
-			request.setAttribute("msg", msg);
+			request.setAttribute("signupMsg", msg);
 			return "signup.jsp";
 		} catch(Exception e) {
 //			request.getRequestDispatcher("/jsp/signup-ok.jsp").forward(request, response);
 			String msg="登録に失敗しました。すでに同じユーザー名が存在します。";
-			request.setAttribute("msg", msg);
+			request.setAttribute("signupMsg", msg);
 			return "signup.jsp";
 		}
 	}

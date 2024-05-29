@@ -18,11 +18,11 @@ public class DeleteaccAction extends Action{
 		int line=dao.deleteAcc(id);
 		if(line==1) {
 			String msg="削除に成功";
-			session.setAttribute("msg", msg);
+			session.setAttribute("deleteMsg", msg);
 			return "admin.jsp";
 		}
 		String msg="削除に失敗";
-		session.setAttribute("msg", msg);
+		session.setAttribute("deleteMsg", msg);
 		return "admin.jsp";
 	}
 	

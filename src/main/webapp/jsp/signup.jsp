@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@include file="/header.html" %>
 
-<p>${msg }</p>
+<p>${signupMsg }</p>
 <%
-session.removeAttribute("msg");
+session.removeAttribute("signupMsg");
 %>
 <form action="Signup.action" method="post">
 	ユーザー名<input type="text" name="login" required><br>
