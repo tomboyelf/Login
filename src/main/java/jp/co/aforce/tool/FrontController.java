@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 //フロントコントローラーのサーブレットを、末尾が.actionで終わるURLに対応つける
 //つまり、Search.actionのようなURLを開くと、フロントコントローラーが実行される
@@ -15,6 +16,15 @@ import jakarta.servlet.http.HttpServletResponse;
 public class FrontController extends HttpServlet {
 	protected void doPost(
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		アプリ全体のセッションを管理
+		 HttpSession session = request.getSession();
+		 if(session.getAttribute("msg") != null) {
+			 session.removeAttribute("msg");
+		 }
+		 if(session.getAttribute("login") != null) {
+			 session.removeAttribute("login");
+		 }
+		
 		PrintWriter out = response.getWriter();
 		try {
 //			getServletPathメソッド

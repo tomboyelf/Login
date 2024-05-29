@@ -11,10 +11,7 @@
 	</form>
 </c:forEach>
 <p>${msg }</p>
-<%
-session.removeAttribute("msg");
-%>
 <p><a href="Admin.action">管理者画面</a></p>
-<p><a href="/Login/jsp/login.jsp">ログイン画面へ戻る</a></p>
+<p><a href="/Login/jsp/index.jsp">ホームへ戻る</a></p>
 
 <%@include file="/footer.html" %>
